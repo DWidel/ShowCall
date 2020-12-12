@@ -1,0 +1,59 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+ShowCall
+</name>
+</assembly>
+<members>
+<member name="T:ShowCall.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:ShowCall.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:ShowCall.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:ShowCall.My.Resources.Resources.cancel">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ShowCall.My.Resources.Resources.phone_grey">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:ShowCall.My.Resources.Resources.phone_greyMessage">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:ShowCall.My.Resources.Resources.phone_yellow">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:ShowCall.My.Resources.Resources.phone_yellowMessage">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="M:ShowCall.modCallInfo.GetLastCall(System.Collections.Generic.List{System.Collections.Generic.List{System.String}})">
+ <summary>
+ 'convert   list of strings into the class callinfo.
+ CallList is a list of 3 strings, Time/Date, Number/Name, Action
+ </summary>
+ <param name="callist"></param>
+ <returns></returns> 
+</member>
+</members>
+</doc>
