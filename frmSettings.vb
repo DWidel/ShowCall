@@ -56,6 +56,7 @@
         Integer.TryParse(My.Settings.NotificationFontSize, FontSize)
         cboFontSize.SelectedItem = FontSize
 
+        chkDebugLog.Checked = My.Settings.DebugLog
 
     End Sub
 
@@ -68,6 +69,9 @@
             My.Settings.NotificationDisplayTime = cboDisplayTime.SelectedItem
 
             My.Settings.NotificationFontSize = cboFontSize.SelectedItem
+
+
+            My.Settings.DebugLog = chkDebugLog.Checked
 
             My.Settings.Save()
 

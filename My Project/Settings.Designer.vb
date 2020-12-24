@@ -113,6 +113,18 @@ Namespace My
                 Me("NotificationFontSize") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property DebugLog() As Boolean
+            Get
+                Return CType(Me("DebugLog"),Boolean)
+            End Get
+            Set
+                Me("DebugLog") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

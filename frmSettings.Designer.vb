@@ -34,6 +34,8 @@ Partial Class frmSettings
         Me.lblVersion = New System.Windows.Forms.Label()
         Me.cboFontSize = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.chkDebugLog = New System.Windows.Forms.CheckBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'txtCallAttendantURL
@@ -125,7 +127,7 @@ Partial Class frmSettings
         Me.lblVersion.Name = "lblVersion"
         Me.lblVersion.Size = New System.Drawing.Size(48, 13)
         Me.lblVersion.TabIndex = 15
-        Me.lblVersion.Text = "vers. 0.3"
+        Me.lblVersion.Text = "vers. 0.4"
         '
         'cboFontSize
         '
@@ -145,11 +147,31 @@ Partial Class frmSettings
         Me.Label6.TabIndex = 19
         Me.Label6.Text = "Notification Font Size"
         '
+        'chkDebugLog
+        '
+        Me.chkDebugLog.AutoSize = True
+        Me.chkDebugLog.Location = New System.Drawing.Point(168, 189)
+        Me.chkDebugLog.Name = "chkDebugLog"
+        Me.chkDebugLog.Size = New System.Drawing.Size(15, 14)
+        Me.chkDebugLog.TabIndex = 20
+        Me.chkDebugLog.UseVisualStyleBackColor = True
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(99, 189)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(60, 13)
+        Me.Label5.TabIndex = 21
+        Me.Label5.Text = "Debug Log"
+        '
         'frmSettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(587, 407)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.chkDebugLog)
         Me.Controls.Add(Me.cboFontSize)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.lblVersion)
@@ -181,4 +203,6 @@ Partial Class frmSettings
     Private WithEvents lblVersion As Label
     Private WithEvents cboFontSize As ComboBox
     Private WithEvents Label6 As Label
+    Friend WithEvents chkDebugLog As CheckBox
+    Private WithEvents Label5 As Label
 End Class

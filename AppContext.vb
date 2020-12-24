@@ -5,7 +5,6 @@ Imports System.IO
 Public Class AppContext
     Inherits ApplicationContext
 
-#Const Debuglog = True
 
 
 
@@ -26,12 +25,20 @@ Public Class AppContext
 
     Public Sub New()
 
-#If Debuglog Then
-        If IO.File.Exists(LogFile) Then
-            IO.File.Delete(LogFile)
+        'If My.Settings.DebugLog Then
+        '    If IO.File.Exists(LogFile) Then
+        '        IO.File.Delete(LogFile)
+        '    End If
+        '    IO.File.WriteAllText(LogFile, "")
+        'End If
+
+
+        If My.Settings.DebugLog Then
+            LogMsg(vbCrLf & vbCrLf & vbCrLf & vbCrLf & vbCrLf & vbCrLf & vbCrLf & vbCrLf & vbCrLf & vbCrLf)
+            LogMsg("SHOWCALL HAS STARTED.")
+
         End If
-        IO.File.WriteAllText(LogFile, "")
-#End If
+
 
         'Initialize the menu 
         mnuSettings = New ToolStripMenuItem("Settings")
@@ -85,15 +92,19 @@ Public Class AppContext
                 End If
             End Using
         Catch ex As Exception
+            LogMsg(ex.ToString)
             MsgBox(ex.ToString)
         End Try
     End Sub
     Private Sub mnuDebug_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles mnuDebug.Click
         Try
+            LogMsg("Open Debug")
             Using f As New frmDebug
                 f.ShowDialog()
             End Using
+            LogMsg("Close Debug")
         Catch ex As Exception
+            LogMsg(ex.ToString)
             MsgBox(ex.ToString)
         End Try
     End Sub
@@ -109,8 +120,10 @@ Public Class AppContext
 
     Private Sub mnuExit_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles mnuExit.Click
         Try
+            LogMsg("mnuExit_Click")
             ExitApplication()
         Catch ex As Exception
+            LogMsg(ex.ToString)
             MsgBox(ex.ToString)
         End Try
     End Sub
@@ -144,7 +157,7 @@ Public Class AppContext
     Private Async Sub Timr_Tick(ByVal sender As Object, ByVal e As System.EventArgs) Handles Timr.Tick
         Try
 
-            LogMsg("Timr_Tick")
+            LogMsg("Tick")
             If mTickRunning Then Return
             mTickRunning = True
 
@@ -157,7 +170,7 @@ Public Class AppContext
 
     Private Async Function DoPhoneCheck() As Task
         Try
-            LogMsg("DoPhoneCheck LastCall=" & Format(mLastCallClosed.CallTime, "HH:mm:ss"))
+            LogMsg("Check Lst=" & Format(mLastCallClosed.CallTime, "HH:mm:ss"))
             Dim src As String = Await GetWebPage()
 
             Dim callList As List(Of List(Of String)) = GetCallList2(src)
